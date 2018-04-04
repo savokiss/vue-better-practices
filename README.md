@@ -1,2 +1,2 @@
-# vue-best-practices
-Vue.js almost best practices
+# vue-better-practices
+Vue.js better practices
