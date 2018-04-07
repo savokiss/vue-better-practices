@@ -1,4 +1,4 @@
-# 背景
+# 配置文件管理
 大家应该对 vue-cli 很熟悉了，最常用的可能是其中的 [webpack](https://github.com/vuejs-templates/webpack) 模板，这个模板中有 config 文件夹，里面包含三个配置文件，`index.js` 就不说了，`dev.env.js` 和 `prod.env.js` 是对应 `process.env.NODE_ENV` 的环境变量的配置文件，这两个配置文件里面是可以添加自己的内容的，下面是我的配置
 
 - `dev.env.js`
