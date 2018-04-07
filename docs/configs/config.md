@@ -63,3 +63,94 @@ export default api
 ```
 
 ## 扩展配置
+在发布代码的时候，我们可能会有多个环境，如 测试环境、仿真环境、生产环境，这些环境的api 地址也都是不同的，下面简单介绍一些如何配置不同环境的 api 地址。
+
+简单来说：我们要做的是在 build 的时候根据情况 build 出不同的 api 地址，所以不需要去管 dev 环境的配置。
+
+这其中其实有两条设置 `process.env` 的路线，先说第一条：
+
+<p class="tip">
+配置文件 -> Webpack DefinePlugin -> 业务代码
+</p>
+
+首先先来看一下 `NODE_ENV` 是在什么时候被设置成 `production` 的，找了下，是在 `build/build.js` 中的最上面
+
+```javascript
+// ... some code
+process.env.NODE_ENV = 'production'
+
+// ... some code
+const webpackConfig = require('./webpack.prod.conf')
+```
+注意这里引用了 `webpack.prod.conf`，看下：
+
+```javascript
+// ... some code
+const env = require('../config/prod.env')
+// ... some code
+const webpackConfig = merge(baseWebpackConfig, {
+  // ... some code
+  plugins: [
+    new webpack.DefinePlugin({
+      'process.env': env
+    }),
+  ]
+})
+```
+
+plugins 这里是 webpack 定义变量用的，把 env 整个对象 定义为了 `process.env`，所以我们才能在代码中访问 `process.env`
+
+熟悉 node 的同学都知道，`process.env` 这个东西其实是 node.js 里面的，这里只不过是 webpack 定义的一个变量。
+
+我们要实现的根据不同情况 build 出不同的代码，这本质是在 本地 node 环境完成的，其实用到的是真正的 `process.env`，即第二条设置路线：
+
+<p class="tip">
+npm scripts -> SET ENV -> 配置文件
+</p>
+
+> see: [npm 设置环境变量](https://docs.npmjs.com/misc/config#environment-variables)
+
+我们首先假设要创建的变量名叫 `PROD_ENV`，根据不同，三种不同环境 测试、仿真、生产 分别为: `testing`,`staging`,`production`
+
+在 `package.json` 中
+```json
+"scripts" : {
+    "build": "cross-env PROD_ENV=testing node build/build.js",
+    "build:staging": "cross-env PROD_ENV=staging node build/build.js",
+    "build:production": "cross-env PROD_ENV=production node build/build.js",
+}
+```
+
+这里用了一个处理兼容性的 `cross-env`，安装一下即可
+```
+npm i cross-env -D
+```
+
+然后我们这个 `PROD_ENV` 变量传到哪里了呢？当然就是后面的 `build.js`，前面说了一个引用管理，可以知道，`config/prod.env.js` 中是可以访问到 `PROD_ENV` 这个变量的，感兴趣的同学可以试一下~
+
+那这样就很好办了，在 `config/prod.env.js` 中：
+
+```javascript
+// api 地址
+const PROD_ENV_API_HASH = {
+  testing: '"//your.testing.server"',
+  staging: '"//your.staging.server"',
+  production: '"//your.production.server"'
+}
+
+module.exports = {
+  NODE_ENV: '"production"',
+  API_URL: PROD_ENV_API_HASH[process.env.PROD_ENV] // 生产环境 API 地址
+}
+```
+
+Done，接下来执行不同的命令，就能打包出 API 地址不同的代码了：
+
+```bash
+# for testing
+npm run build
+# for staging
+npm run build:staging
+# for production
+npm run build:production
+```
