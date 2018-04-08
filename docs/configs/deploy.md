@@ -2,6 +2,9 @@
 
 现在的前端在部署代码的时候一般只需要打包上传即可。这个过程如果用 gulp 来做的话会简单很多。
 笔者目前只在部署测试环境时使用该方法，因为仿真和生产环境有持续集成工具。
+> Gulp 官网： https://gulpjs.com/
+
+> Gulp SSH： https://github.com/teambition/gulp-ssh
 
 ## 安装依赖
 
@@ -11,6 +14,8 @@
 ```bash
 npm install gulp gulp-ssh --save-dev
 ```
+
+
 
 ## 具体代码
 下面是 gulpfile 中的代码
