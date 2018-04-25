@@ -2,10 +2,10 @@
 
 父到子，子到父的通信方式就不用多说了，其他层级结构的组件通信官方有一个推荐做法：
 
-> see: [vue.js eventHub](https://cn.vuejs.org/v2/guide/migration.html#dispatch-%E5%92%8C-broadcast-%E6%9B%BF%E6%8D%A2
+> see: [Vue.js eventHub](https://cn.vuejs.org/v2/guide/migration.html#dispatch-%E5%92%8C-broadcast-%E6%9B%BF%E6%8D%A2
 )
 
-## 事件总线：
+## 事件总线
 ```javascript
 // /utils/eventHub.js
 // 将在各处使用该事件中心
@@ -15,7 +15,7 @@ import Vue from 'vue'
 export default new Vue()
 ```
 
-## 派发事件的组件：
+## 派发事件的组件
 ```javascript
 import eventHub from '@/utils/eventHub'
 
@@ -29,7 +29,7 @@ export default {
 }
 ```
 
-## 接收事件的组件：
+## 接收事件的组件
 ```javascript
 import eventHub from '@/utils/eventHub'
 

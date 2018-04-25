@@ -1,0 +1,27 @@
+{
+  "name": "vue-better-practices",
+  "version": "1.0.0",
+  "description": "Vue.js better practices",
+  "main": "config.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "docs": "vuepress dev",
+    "docs:build": "vuepress build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/savokiss/vue-better-practices.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/savokiss/vue-better-practices/issues"
+  },
+  "homepage": "https://github.com/savokiss/vue-better-practices#readme",
+  "dependencies": {
+    "markdown-it-task-lists": "^2.1.1",
+    "vuepress": "^0.8.4"
+  }
+}

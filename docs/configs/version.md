@@ -2,7 +2,7 @@
 现在的前端项目一般都会用到 npm 来管理依赖包，而 npm 包都是有版本号的，这个版本号用的是 `semver` 记法
 简单来说就是三个部分分别为： Major, Minor, Patch
 
-> see: [https://semver.org/](https://semver.org/)
+> see: <https://semver.org/>
 
 ## 项目中配置
 在项目中配置也很简单，现在的 webpack 项目都支持 `import` json 文件 
