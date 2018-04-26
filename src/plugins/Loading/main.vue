@@ -2,7 +2,7 @@
   <div class="loading" v-show="show">
     <div class="loading-toast">
       <i class="loading-icon"></i>
-      <p class="loading-content">
+      <p class="loading-text">
         {{ text || '加载中' }}
       </p>
     </div>
@@ -57,7 +57,7 @@ export default {
   background-size: 100%;
 }
 
-.loading-content {
+.loading-text {
   margin-top: 0;
   margin-bottom: 10px;
 }
