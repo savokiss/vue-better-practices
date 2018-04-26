@@ -1,8 +1,15 @@
-# vue-better-practices
-Vue.js better practices
+---
+home: true
+actionText: Start →
+actionLink: /docs/configs/proxy
+footer: Developed using VuePress by savokiss
+---
+
+# Vue.js Better Practices
+Vue.js 最佳实践
 
 
-# TODO
+## TODO
 - 基础配置
   - [x] 本地代理
   - [x] 版本号管理

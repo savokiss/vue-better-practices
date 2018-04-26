@@ -1,6 +1,6 @@
 module.exports = {
-  title: 'vue-better-practices',
-  description: 'Vue.js better practices',
+  title: 'Vue Better Practices',
+  description: '实用的 Vue.js 最佳实践合集',
   ga: 'UUA-118141120-1',
   markdown: {
     config: md => {

@@ -45,7 +45,7 @@ export default {
 }
 ```
 
-然后在 `@/services/api.js`（详见 [Axios封装](/docs/abstract/axios) ) 中这样写：
+然后在 `@/services/api.js`（详见 [Axios封装](/docs/abstract/axios.md) ) 中这样写：
 
 ```javascript
 import axios from 'axios'
@@ -69,9 +69,9 @@ export default api
 
 这其中其实有两条设置 `process.env` 的路线，先说第一条：
 
-<p class="tip">
+::: tip
 配置文件 -> Webpack DefinePlugin -> 业务代码
-</p>
+:::
 
 首先先来看一下 `NODE_ENV` 是在什么时候被设置成 `production` 的，找了下，是在 `build/build.js` 中的最上面
 
@@ -104,9 +104,9 @@ plugins 这里是 webpack 定义变量用的，把 env 整个对象 定义为了
 
 我们要实现的根据不同情况 build 出不同的代码，这本质是在 本地 node 环境完成的，其实用到的是真正的 `process.env`，即第二条设置路线：
 
-<p class="tip">
+::: tip
 npm scripts -> SET ENV -> 配置文件
-</p>
+:::
 
 > see: [npm 设置环境变量](https://docs.npmjs.com/misc/config#environment-variables)
 
@@ -122,7 +122,7 @@ npm scripts -> SET ENV -> 配置文件
 ```
 
 这里用了一个处理兼容性的 `cross-env`，安装一下即可
-```
+```bash
 npm i cross-env -D
 ```
 
