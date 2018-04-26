@@ -1,0 +1,15 @@
+$primaryColor = #3eaf7c
+
+.btn
+  display inline-block
+  outline none
+  font-size 1rem
+  color #fff
+  background-color $primaryColor
+  padding 0.6rem 1rem
+  border-radius 4px
+  transition background-color .1s ease
+  box-sizing border-box
+  border-bottom 1px solid darken($primaryColor, 10%)
+  &:hover
+    background-color lighten($primaryColor, 10%)

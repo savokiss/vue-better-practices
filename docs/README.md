@@ -30,5 +30,3 @@ Vue.js 最佳实践
   - [x] 深度作用选择器
   - [x] 函数式组件
   
-
-  <!-- <link href="https://cdn.bootcss.com/bootstrap/4.1.0/css/bootstrap.min.css" rel="stylesheet"> -->
