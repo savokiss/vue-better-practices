@@ -7,6 +7,13 @@ module.exports = {
       md.use(require('markdown-it-task-lists'), { enabled: true })
     }
   },
+  configureWebpack: {
+    resolve: {
+      alias: {
+        '@assets': '/assets/'
+      }
+    }
+  },
   themeConfig: {
     repo: 'savokiss/vue-better-practices',
     // docsDir: 'docs',

@@ -8,7 +8,8 @@
   },
   "scripts": {
     "docs": "vuepress dev",
-    "docs:build": "vuepress build"
+    "docs:build": "vuepress build",
+    "mock": "json-server --watch ./mock/db.json --routes ./mock/router.json"
   },
   "repository": {
     "type": "git",
