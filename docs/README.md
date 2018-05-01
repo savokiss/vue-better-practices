@@ -18,7 +18,7 @@ Vue.js 最佳实践
   - [x] Mock数据
   
 - 上层封装
-  - [ ] Axios封装
+  - [x] Axios封装
   - [ ] Services层封装
 
 - 全局组件
