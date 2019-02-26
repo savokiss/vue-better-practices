@@ -1,3 +1,5 @@
 # 全局 Toast
 
-<ToastDemo />
+<ClientOnly>
+  <ToastDemo />
+</ClientOnly>

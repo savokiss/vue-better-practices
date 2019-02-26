@@ -1,3 +1,5 @@
 # 全局 Loading
 
-<LoadingDemo />
+<ClientOnly>
+  <LoadingDemo />
+</ClientOnly>
