@@ -1,12 +1,14 @@
 module.exports = {
   title: 'Vue Better Practices',
   description: '实用的 Vue.js 最佳实践合集',
-  ga: 'UUA-118141120-1',
-  markdown: {
-    config: md => {
-      md.use(require('markdown-it-task-lists'), { enabled: true })
-    }
+  extendMarkdown(md) {
+    md.use(require('markdown-it-task-lists'), { enabled: true })
   },
+  plugins: [
+    ['@vuepress/google-analytics', {
+      ga: 'UUA-118141120-1'
+    }]
+  ],
   configureWebpack: {
     resolve: {
       alias: {

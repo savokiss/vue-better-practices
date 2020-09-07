@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/savokiss/vue-better-practices#readme",
   "dependencies": {
+    "@vuepress/plugin-google-analytics": "^1.0.0-rc.1",
     "markdown-it-task-lists": "^2.1.1",
     "vuepress": "^1.5.4"
   }
