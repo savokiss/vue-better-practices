@@ -8,6 +8,6 @@ export default ({
   siteData // 站点元数据
 }) => {
   // waiting for ssr
-  Vue.use(Loading)
-  Vue.use(Toast)
+  // Vue.use(Loading)
+  // Vue.use(Toast)
 }

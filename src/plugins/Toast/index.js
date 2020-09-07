@@ -1,6 +1,7 @@
 import Toast from './main'
 
 let instance
+let document = global.document || null
 
 const plugin = {
   install (Vue, options) {
